@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
 module Admin
-  class ArticleController < Admin::BaseController
+  class ArticlesController < BaseController
   end
 end

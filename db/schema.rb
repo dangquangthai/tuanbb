@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_26_112807) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_26_145938) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -61,44 +61,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_26_112807) do
     t.string "slug"
     t.boolean "published"
     t.integer "position"
-  end
-
-  create_table "featured_articles", force: :cascade do |t|
-    t.string "featureable_type", null: false
-    t.bigint "featureable_id", null: false
-    t.integer "position"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["featureable_type", "featureable_id"], name: "index_featured_articles_on_featureable"
-  end
-
-  create_table "featured_menus", force: :cascade do |t|
-    t.string "featureable_type", null: false
-    t.bigint "featureable_id", null: false
-    t.integer "position"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["featureable_type", "featureable_id"], name: "index_featured_menus_on_featureable"
-  end
-
-  create_table "mentioned_products", force: :cascade do |t|
-    t.bigint "product_id"
-    t.bigint "article_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["article_id"], name: "index_mentioned_products_on_article_id"
-    t.index ["product_id"], name: "index_mentioned_products_on_product_id"
-  end
-
-  create_table "products", force: :cascade do |t|
-    t.string "title"
-    t.text "standfirst"
-    t.string "slug"
-    t.integer "position"
-    t.datetime "published_at"
-    t.boolean "published"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
