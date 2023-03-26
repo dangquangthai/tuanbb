@@ -9,6 +9,7 @@ gem "rails", "~> 7.0.4", ">= 7.0.4.2"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'cssbundling-rails', '~> 1.1.2'
 gem 'sprockets-rails', '~> 3.4.2'
+gem 'view_component', '~> 2.82'
 
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.4.6'
