@@ -10,6 +10,7 @@ gem "rails", "~> 7.0.4", ">= 7.0.4.2"
 gem 'cssbundling-rails', '~> 1.1.2'
 gem 'sprockets-rails', '~> 3.4.2'
 gem 'view_component', '~> 2.82'
+gem 'devise', '~> 4.9'
 
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.4.6'
