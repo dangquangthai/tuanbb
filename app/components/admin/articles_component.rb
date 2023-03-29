@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
 module Admin
-  class FeatureArticlesComponent < ViewComponent::Base
-    def initialize(featured_articles:)
-      @featured_articles = featured_articles
+  class ArticlesComponent < ViewComponent::Base
+    def initialize(articles:)
+      @articles = articles
     end
 
-    attr_reader :featured_articles
+    attr_reader :articles
   end
 end

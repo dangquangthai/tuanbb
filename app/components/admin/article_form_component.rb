@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-class Admin::FeatureArticleFormComponent < ViewComponent::Base
-  def initialize(featured_article:)
-    @featured_article = featured_article
+class Admin::ArticleFormComponent < ViewComponent::Base
+  def initialize(article:)
+    @article = article
   end
 
-  attr_reader :featured_article
+  attr_reader :article
 end
