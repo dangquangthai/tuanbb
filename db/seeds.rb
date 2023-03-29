@@ -28,7 +28,3 @@ if Article.count == 0
     Article.create(params.merge(published: true, published_at: Time.current))
   end
 end
-
-if Product.count == 0
-
-end
