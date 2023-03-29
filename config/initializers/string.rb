@@ -1,0 +1,10 @@
+class String
+  def to_slug
+    return if blank?
+
+    tr(
+      'ÀÁÂÃÄÅàáâãäåĀāĂăĄąạảÇçĆćĈĉĊċČčÐðĎďĐđÈÉÊËèéêểệễëĒēĔĕĖėĘęĚěẹĜĝĞğĠġĢģĤĥĦħÌÍÎÏìíîïĨĩĪīĬĭĮįİıịỉĴĵĶķĸĹĺĻļĽľĿŀŁłÑñŃńŅņŇňŉŊŋÒÓÔÕÖØòóôộỗổõöøŌōŎŏŐőọỏơởợỡŔŕŖŗŘřŚśŜŝŞşŠšſŢţŤťŦŧÙÚÛÜùúûüŨũŪūŬŭŮůŰűŲųụưủửữựŴŵÝýÿŶŷŸŹźŻżŽžứừửựữốồộỗổờóợỏỡếềễểệẩẫấầậỳỹýỷỵặẵẳằắ',
+      'AAAAAAaaaaaaAaAaAaaaCcCcCcCcCcDdDdDdEEEEeeeeeeEeEeEeEeEeeGgGgGgGgHhHhIIIIiiiiIiIiIiIiIiiiJjKkkLlLlLlLlLlNnNnNnNnnNnOOOOOOoooooooooOoOoOoooooooRrRrRrSsSsSsSssTtTtTtUUUUuuuuUuUuUuUuUuUuuuuuuuWwYyyYyYZzZzZzuuuuuoooooooooooeeeeeaaaaayyyyyaaaaa'
+    ).downcase.parameterize
+  end
+end
