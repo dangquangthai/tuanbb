@@ -1,0 +1,26 @@
+<<%= href ? 'a' : 'button' %>
+  <% if href && !type && !disabled %>href="<%= href %>"<% end %>
+  <% if href && !type && !disabled && turbo_method %>data-turbo-method="<%= turbo_method %>"<% end %>
+  <% if type && !href && !disabled %>type="<%= type %>"<% end %>
+  <% if type == :submit && form_target && !href && !disabled %>form="<%= form_target %>"<% end %>
+  <% if type == :submit && submit_value && !href && !disabled %>value="<%= submit_value %>"<% end %>
+  <% if type == :submit && form_url && !href && !disabled %>formaction="<%= form_url %>"<% end %>
+  <% if query_selector %>
+    id="<%=query_selector %>"
+    aria-label="<%=query_selector.underscore.titleize %>"
+  <% end %>
+  class="<%= defaullt_css_class %>"
+  <% if disabled %>disabled<% end %>
+  <% if data %><%= tag.attributes(**data_html_attributes) %><% end %>
+  <% if html_attributes %><%= tag.attributes(**html_attributes) %><% end %>
+>
+  <% if leading_icon %><%== svg_icon(leading_icon, class: "#{icon_css_class('mr-2')} #{leading_icon_css_class}") %><% end %>
+
+  <% if content.present? %>
+    <%= content %>
+  <% else %>
+    <% if text %><%== text %><% end %>
+  <% end %>  
+
+  <% if trailing_icon %><%== svg_icon(trailing_icon, class: "#{icon_css_class('ml-2')} #{trailing_icon_css_class}") %><% end %>
+</<%= href ? 'a' : 'button' %>>

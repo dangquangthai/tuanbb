@@ -6,8 +6,8 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
-
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag 'helpers' %>
     <%= javascript_importmap_tags %>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Roboto:300,400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -20,5 +20,7 @@
     </main>
     <%= render 'layouts/google_analytics' %>
     <%= render 'layouts/facebook_chatbox' %>
+    <div id="modal" class="hidden"></div>
+    <div id="events" class="hidden"></div>
   </body>
 </html>

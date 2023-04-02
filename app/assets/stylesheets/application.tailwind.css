@@ -8,7 +8,147 @@
 }
 
 @layer components {
+  .modal-md {
+    @apply w-[400px];
+  }
+
+  .modal-lg {
+    @apply w-[980px];
+  }
+
+  .text-primary {
+    @apply text-slate-900;
+  }
+
+  .text-secondary {
+    @apply text-slate-700; 
+  }
+
   .menu-item {
-    @apply p-2 font-semibold border-b-2 border-white hover:border-slate-600;
+    @apply p-2 font-semibold border-b-2 border-white hover:border-slate-700;
+  }
+
+  .btn {
+    @apply inline-flex items-center rounded-md border border-transparent;
+  }
+
+  .btn-primary {
+    @apply btn bg-slate-700 text-white shadow-sm hover:bg-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-800 focus:ring-offset-2;
+  }
+
+  .btn-secondary {
+    @apply btn bg-stone-700 text-white shadow-sm hover:bg-stone-900 focus:outline-none focus:ring-2 focus:ring-stone-800 focus:ring-offset-2;
+  }
+
+  .btn-danger {
+    @apply btn bg-red-600 text-white shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2;
+  }
+
+  .btn-none {
+    @apply btn text-secondary hover:text-gray-800 focus:outline-none focus:ring-0 focus:ring-offset-0;
+  }
+
+  .btn-xs {
+    @apply px-1.5 py-1 text-[12px] font-semibold;
+  }
+
+  .btn-sm {
+    @apply px-2.5 py-2 text-[12px] font-semibold leading-4;
+  }
+
+  .btn-md {
+    @apply px-3 py-2.5 text-sm font-semibold;
+  }
+
+  .btn-lg {
+    @apply px-3 py-3 text-base font-semibold;
+  }
+
+  .btn-xl {
+    @apply px-4 py-3.5 text-xl font-semibold;
+  }
+
+  .txt-valid {
+    @apply resize-none shadow w-full border-slate-300 shadow-sm focus:border-blue-800 focus:ring-blue-800;
+  }
+
+  .txt-valid-disabled {
+    @apply resize-none focus:border-indigo-500 focus:ring-indigo-500 disabled:cursor-not-allowed disabled:border-gray-200 disabled:bg-gray-50 disabled:text-gray-500;
+  }
+
+  .txt-invalid {
+    @apply resize-none shadow w-full border-red-500 pr-10 text-red-900 placeholder-red-300 focus:border-red-700 focus:outline-none focus:ring-red-700;
+  }
+
+  .txt-invalid[type="radio"], .txt-invalid[type="checkbox"] {
+    @apply pr-0;
+  }
+
+  .txt-invalid-disabled {
+    @apply resize-none focus:border-indigo-500 focus:ring-indigo-500 disabled:cursor-not-allowed disabled:border-gray-200 disabled:bg-gray-50 disabled:text-gray-500;
+  }
+
+  .pagination {
+    @apply bg-white text-primary p-2 rounded-md text-sm;
+  }
+
+  .pagination > .page.prev, .pagination > .page.next {
+    @apply btn-secondary px-2;
+  }
+
+  .pagination > .page.active {
+    @apply btn-primary px-2;
+  }
+
+  .pagination > .page {
+    @apply btn-secondary px-2;
+  }
+
+  .trix-editor trix-editor {
+    @apply overflow-auto rounded-t-none;
+  }
+
+  .trix-editor trix-editor:focus {
+    @apply border-gray-300;
+  }
+
+  .trix-editor trix-editor > ol {
+    @apply !list-decimal !p-[revert];
+  }
+
+  .trix-editor trix-editor > ul {
+    @apply !list-disc !p-[revert];
+  }
+
+  .trix-editor trix-editor > blockquote {
+    @apply !m-[revert];
+  }
+
+  .trix-editor trix-editor > pre {
+    @apply !m-[revert];
+  }
+
+  .trix-editor .trix-button-row {
+    @apply bg-slate-100 border border-b-0 border-gray-300 rounded-t;
+  }
+
+  .trix-editor .trix-button-group {
+    @apply mb-0 border-0 rounded-none;
+  }
+
+  .trix-editor .trix-button-group .trix-button {
+    @apply w-12 h-9 border-0 flex justify-center items-center;
+  }
+
+  .trix-editor .trix-button-group .trix-button:hover {
+    @apply bg-indigo-100;
+  }
+
+  .trix-editor .trix-button-group .trix-button.trix-active {
+    @apply bg-indigo-100;
+  }
+
+  .trix-editor .trix-button-group .trix-button:before {
+    @apply w-5 h-full static;
   }
 }

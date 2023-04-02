@@ -1,23 +1,25 @@
-<div class="flex p-2 md:p-3 items-center">
-  <div class="flex-none">
-    <%= image_tag '/logo.png', class: 'w-[200px]' %>
-  </div>
-  <div class="grow flex justify-end">
-    <div class="md:hidden">
-      <span class="material-icons material-icons-outlined">
-        menu
-      </span>
+<header class="shadow-md sm:shadow-none">
+  <div class="flex p-3 items-center">
+    <div class="flex-none">
+      <%= image_tag '/logo.png', class: 'w-[200px]' %>
     </div>
-    <div class="hidden md:flex lg:gap-4 md:gap-3 md:justify-end">
-      <% Menu.top.take(2).each do |menu| %>
-        <%= link_to menu.title, article_path(slug: menu.slug), class: 'menu-item' %>
-      <% end %>
+    <div class="grow flex justify-end">
+      <div class="sm:hidden sticky top-0">
+        <span class="material-icons material-icons-outlined">
+          menu
+        </span>
+      </div>
+      <div class="hidden sm:flex lg:gap-4 sm:gap-3 sm:justify-end">
+        <% Menu.top.take(2).each do |menu| %>
+          <%= link_to menu.title, article_path(slug: menu.slug), class: 'menu-item' %>
+        <% end %>
+      </div>
     </div>
   </div>
-</div>
 
-<div class="hidden md:flex gap-4 p-2 md:p-3 items-center">
-  <% Menu.top.drop(2).each do |menu| %>
-    <%= link_to menu.title, article_path(slug: menu.slug), class: 'menu-item' %>
-  <% end %>
-</div>
+  <div class="hidden sm:flex gap-4 p-2 sm:p-3 items-center">
+    <% Menu.top.drop(2).each do |menu| %>
+      <%= link_to menu.title, article_path(slug: menu.slug), class: 'menu-item' %>
+    <% end %>
+  </div>
+</header>

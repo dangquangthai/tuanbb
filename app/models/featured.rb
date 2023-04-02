@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Featured < ApplicationRecord
   belongs_to :article
 

@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
-class Admin::MenuFormComponent < ViewComponent::Base
-
+module Admin
+  class MenuFormComponent < ViewComponent::Base
+  end
 end
