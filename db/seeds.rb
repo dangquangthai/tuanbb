@@ -28,3 +28,9 @@ if Article.count == 0
     Article.create(params.merge(published: true, published_at: Time.current))
   end
 end
+
+if Menu.count == 0
+  Article.top.find_each do |article|
+    Menu.create(article: article, position: article.position)
+  end
+end

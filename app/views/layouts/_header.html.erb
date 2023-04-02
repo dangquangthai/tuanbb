@@ -9,11 +9,15 @@
       </span>
     </div>
     <div class="hidden md:flex lg:gap-4 md:gap-3 md:justify-end">
-      <span>desktop</span>
-      <span>desktop</span>
-      <span>desktop</span>
-      <span>desktop</span>
-      <span>desktop</span>
+      <% Menu.top.take(2).each do |menu| %>
+        <%= link_to menu.title, article_path(slug: menu.slug), class: 'menu-item' %>
+      <% end %>
     </div>
   </div>
+</div>
+
+<div class="hidden md:flex gap-4 p-2 md:p-3 items-center">
+  <% Menu.top.drop(2).each do |menu| %>
+    <%= link_to menu.title, article_path(slug: menu.slug), class: 'menu-item' %>
+  <% end %>
 </div>

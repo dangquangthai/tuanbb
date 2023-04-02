@@ -18,6 +18,6 @@ Rails.application.routes.draw do
     resources :home, only: %i[index]
   end
 
-  get '/:slug', to: 'articles#index'
-  get '/san-pham/:slug', to: 'products#index'
+  get '/:slug', to: 'articles#index', as: :article
+  get '/san-pham/:slug', to: 'products#index', as: :product
 end
