@@ -1,9 +1,9 @@
 <div class="hidden gap-4 py-2 sm:flex sm:py-3 items-center lg:grid lg:grid-flow-col lg:justify-stretch">
   <% Menu.below_of_logo.bottom.each do |menu| %>
     <div class="hidden lg:block">
-      <%= link_to menu.title, article_path(slug: menu.slug), class: 'menu-item' %>
+      <%= link_to menu.title, article_path(slug: menu.article.slug), class: 'menu-item' %>
     </div>
     
-    <%= link_to menu.title, article_path(slug: menu.slug), class: 'menu-item lg:hidden' %>
+    <%= link_to menu.title, article_path(slug: menu.article.slug), class: 'menu-item lg:hidden' %>
   <% end %>
 </div>

@@ -14,4 +14,8 @@ class ApplicationController < ActionController::Base
       no_layout status: fail_status
     end
   end
+
+  def no_layout(**options)
+    render layout: false, **options
+  end
 end

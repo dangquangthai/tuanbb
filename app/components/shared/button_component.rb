@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Shared
-  class ButtonComponent < ViewComponent::Base
+  class ButtonComponent < ApplicationComponent
     def initialize(**options)
       @options = options.presence || {}
       read_options

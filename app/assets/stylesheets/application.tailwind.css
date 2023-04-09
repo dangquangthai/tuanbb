@@ -52,6 +52,10 @@
     @apply btn text-secondary hover:text-gray-800 focus:outline-none focus:ring-0 focus:ring-offset-0;
   }
 
+  .btn-link {
+    @apply btn text-secondary hover:text-gray-800 !p-0;
+  }
+
   .btn-xs {
     @apply px-1.5 py-1 text-[12px] font-semibold;
   }

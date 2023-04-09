@@ -9,6 +9,4 @@ class Menu < ApplicationRecord
   scope :bottom, -> { order(:position) }
   scope :right_of_logo, -> { where(kind: :right_of_logo) }
   scope :below_of_logo, -> { where(kind: :below_of_logo) }
-
-  delegate :title, :slug, to: :article, allow_nil: true
 end

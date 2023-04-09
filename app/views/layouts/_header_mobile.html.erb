@@ -6,7 +6,9 @@
 <div id="mobile-menu" class="fixed inset-0 w-screen h-screen bg-white z-10 hidden py-1.5 px-3">
   <div class="flex items-center">
     <div class="flex-none">
-      <%= image_tag '/logo.png', class: 'w-[200px]' %>
+      <a href="<%= root_path %>">
+        <%= image_tag '/logo.png', class: 'w-[200px]' %>
+      </a>
     </div>
     <div class="grow flex justify-end">
       <span class="material-icons material-icons-outlined !text-4xl" data-controller="shared--toggle" data-hide-target="#mobile-menu">
@@ -20,7 +22,7 @@
         <span class="material-icons material-symbols-outlined">
           navigate_next
         </span>
-        <%= link_to menu.title, article_path(slug: menu.slug), class: 'mobile-menu-item' %>
+        <%= link_to menu.title, article_path(slug: menu.article.slug), class: 'mobile-menu-item' %>
       </div>
     <% end %>
   </div>

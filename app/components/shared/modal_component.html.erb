@@ -2,7 +2,6 @@
   aria-labelledby="<%= title %>"
   data-controller="shared--modal"
   data-event-detail=<%= event_detail.to_json %>
-  data-auto-disappear="<%= auto_disappear %>"
 >
   <!--
     Background backdrop, show/hide based on modal state.
@@ -26,7 +25,7 @@
           <div class="flex justify-end">
             <%=
               render Shared::ButtonComponent.new(hierarchy: :none,
-                leading_icon: 'svg/close',
+                leading_icon: 'close',
                 css_class: 'p-0',
                 size: :xl,
                 type: :button,

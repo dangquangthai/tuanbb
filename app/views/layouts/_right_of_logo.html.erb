@@ -1,5 +1,5 @@
 <div class="hidden sm:flex lg:gap-4 sm:gap-3 sm:justify-end">
   <% Menu.right_of_logo.bottom.each do |menu| %>
-    <%= link_to menu.title, article_path(slug: menu.slug), class: 'menu-item' %>
+    <%= link_to menu.title, article_path(slug: menu.article.slug), class: 'menu-item' %>
   <% end %>
 </div>

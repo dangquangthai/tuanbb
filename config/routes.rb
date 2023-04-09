@@ -14,7 +14,8 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :articles
-    resources :products
+    resources :menus
+    resources :featureds
     resources :home, only: %i[index]
   end
 

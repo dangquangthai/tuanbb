@@ -14,8 +14,12 @@
   </head>
 
   <body class="antialiased">
+    <div id="will-redirect" class="hidden"></div>
     <main class="container mx-auto">
       <%= render 'layouts/admin_menu' %>
+      <div id="notifications">
+        <%= render Shared::NotificationComponent.new(flash: flash) %>
+      </div>
       <%= yield %>
     </main>
     <div id="modal" class="hidden"></div>

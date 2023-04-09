@@ -1,7 +1,9 @@
 <header class="shadow-md sm:shadow-none sm:py-3 sm:px-0 px-3 py-1">
   <div class="flex items-center">
     <div class="flex-none">
-      <%= image_tag '/logo.png', class: 'w-[200px]' %>
+      <a href="<%= root_path %>">
+        <%= image_tag '/logo.png', class: 'w-[200px]' %>
+      </a>
     </div>
     <div class="grow flex gap-4 justify-end">
       <%= link_to 'Chỉnh Trang chủ', admin_home_index_path, class: 'menu-item' %>

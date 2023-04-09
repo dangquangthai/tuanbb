@@ -36,7 +36,7 @@ right_of_logo.each do |params|
   article.published = true
   article.published_at = Time.current
   article.save
-puts params
+
   Menu.right_of_logo.where(article: article, position: article.position, title: article.title).first_or_create
 end
 
@@ -45,6 +45,6 @@ below_of_logo.each do |params|
   article.published = true
   article.published_at = Time.current
   article.save
-puts params
+
   Menu.below_of_logo.where(article: article, position: article.position, title: article.title).first_or_create
 end

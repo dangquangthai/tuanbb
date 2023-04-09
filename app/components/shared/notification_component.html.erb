@@ -1,0 +1,19 @@
+<% flash.to_h.each do |type, message| %>
+  <div data-controller="shared--notification" class="<%= css_class(type) %>">
+    <div class="p-2 flex items-center">
+      <div class="flex-none mr-2">
+        <%== icon type, css_class: 'h-6 w-6 text-white' %>
+      </div>
+      <div class="grow mr-2">
+        <p class="font-medium text-white"><%= message %></p>
+      </div>
+      <div class="flex-none flex items-center">
+        <button type="button" data-action="click->shared--notification#onClose">
+          <%== material_icon 'close' %>
+        </button>
+      </div>
+    </div> 
+  </div>
+
+  <% flash.delete(type) %>
+<% end %>  
