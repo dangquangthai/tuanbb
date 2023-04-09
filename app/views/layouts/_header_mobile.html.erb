@@ -1,0 +1,27 @@
+<div class="sm:hidden sticky top-0">
+  <span id="btn-mobile-menu" class="material-icons material-icons-outlined !text-4xl" data-controller="shared--toggle" data-show-target="#mobile-menu">
+    menu
+  </span>
+</div>
+<div id="mobile-menu" class="fixed inset-0 w-screen h-screen bg-white z-10 hidden py-1.5 px-3">
+  <div class="flex items-center">
+    <div class="flex-none">
+      <%= image_tag '/logo.png', class: 'w-[200px]' %>
+    </div>
+    <div class="grow flex justify-end">
+      <span class="material-icons material-icons-outlined !text-4xl" data-controller="shared--toggle" data-hide-target="#mobile-menu">
+        close
+      </span>
+    </div>
+  </div>
+  <div class="grid gap-4 mt-4">
+    <% Menu.bottom.each do |menu| %>
+      <div class="flex">
+        <span class="material-icons material-symbols-outlined">
+          navigate_next
+        </span>
+        <%= link_to menu.title, article_path(slug: menu.slug), class: 'mobile-menu-item' %>
+      </div>
+    <% end %>
+  </div>
+</div>

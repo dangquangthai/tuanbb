@@ -28,6 +28,10 @@
     @apply py-2 font-semibold border-b-2 border-white hover:border-slate-700;
   }
 
+  .mobile-menu-item {
+    @apply text-secondary;
+  }
+
   .btn {
     @apply inline-flex items-center rounded-md border border-transparent;
   }

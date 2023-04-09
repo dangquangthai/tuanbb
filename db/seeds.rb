@@ -16,21 +16,35 @@ if User.count == 0
   end
 end
 
-if Article.count == 0
-  [
-    { title: 'Tư vấn mua hàng trả góp', position: 1, slug: 'tu-van-mua-hang-tra-gop' },
-    { title: 'Chế độ bảo hành', position: 2, slug: 'che-do-bao-hanh' },
-    { title: 'Tuyển dụng', position: 3, slug: 'tuyen-dung' },
-    { title: 'Các dịch vụ', position: 4, slug: 'cac-dich-vu' },
-    { title: 'Bảng giá sỉ', position: 5, slug: 'bang-gia-si' },
-    { title: 'Sim Số Đẹp', position: 6, slug: 'sim-so-dep' },
-  ].each do |params|
-    Article.create(params.merge(published: true, published_at: Time.current))
-  end
+right_of_logo = [
+  { title: 'Bảng Giá Sản Phẩm', position: 1, slug: 'bang-gia-san-pham' },
+  { title: 'Dịch Vụ Sữa Chữa', position: 2, slug: 'dich-vu-sua-chua' },
+  { title: 'Phụ Kiện', position: 3, slug: 'phu-kien' }
+]
+
+below_of_logo = [
+  { title: 'Tư vấn mua hàng trả góp', position: 1, slug: 'tu-van-mua-hang-tra-gop',  },
+  { title: 'Chế độ bảo hành', position: 2, slug: 'che-do-bao-hanh' },
+  { title: 'Tuyển dụng', position: 3, slug: 'tuyen-dung' },
+  { title: 'Các dịch vụ', position: 4, slug: 'cac-dich-vu' },
+  { title: 'Bảng giá sỉ', position: 5, slug: 'bang-gia-si' },
+  { title: 'Sim Số Đẹp', position: 6, slug: 'sim-so-dep' }
+]
+
+right_of_logo.each do |params|
+  article = Article.where(params).first_or_create
+  article.published = true
+  article.published_at = Time.current
+  article.save
+puts params
+  Menu.right_of_logo.where(article: article, position: article.position, title: article.title).first_or_create
 end
 
-if Menu.count == 0
-  Article.top.find_each do |article|
-    Menu.create(article: article, position: article.position)
-  end
+below_of_logo.each do |params|
+  article = Article.where(params).first_or_create
+  article.published = true
+  article.published_at = Time.current
+  article.save
+puts params
+  Menu.below_of_logo.where(article: article, position: article.position, title: article.title).first_or_create
 end

@@ -5,4 +5,5 @@ class Article < ApplicationRecord
   has_many :other_articles, through: :mentioned_articles, source: :other_article, source_type: 'Article'
 
   has_rich_text :content
+  has_one_attached :image
 end

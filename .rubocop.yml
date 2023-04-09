@@ -67,3 +67,6 @@ Metrics/MethodLength:
 
 Metrics/AbcSize:
   Max: 25
+
+Naming/VariableNumber:
+  Enabled: false

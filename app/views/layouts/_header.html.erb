@@ -4,27 +4,10 @@
       <%= image_tag '/logo.png', class: 'w-[200px]' %>
     </div>
     <div class="grow flex justify-end">
-      <div class="sm:hidden sticky top-0">
-        <span id="btn-mobile-menu" class="material-icons material-icons-outlined !text-4xl" data-controller="shared--toggle" data-show-target="#mobile-menu">
-          menu
-        </span>
-      </div>
-      <div id="mobile-menu" class="fixed inset-0 w-screen h-screen bg-white z-10 hidden">
-        <span class="material-icons material-icons-outlined !text-4xl" data-controller="shared--toggle" data-hide-target="#mobile-menu">
-          close
-        </span>
-      </div>
-      <div class="hidden sm:flex lg:gap-4 sm:gap-3 sm:justify-end">
-        <% Menu.top.take(2).each do |menu| %>
-          <%= link_to menu.title, article_path(slug: menu.slug), class: 'menu-item' %>
-        <% end %>
-      </div>
+      <%= render 'layouts/header_mobile' %>
+      <%= render 'layouts/right_of_logo' %>
     </div>
   </div>
 
-  <div class="hidden sm:flex gap-4 py-2 sm:py-3 items-center">
-    <% Menu.top.drop(2).each do |menu| %>
-      <%= link_to menu.title, article_path(slug: menu.slug), class: 'menu-item' %>
-    <% end %>
-  </div>
+  <%= render 'layouts/below_of_logo' %>
 </header>
