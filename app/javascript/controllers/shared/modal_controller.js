@@ -2,12 +2,10 @@ import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
   static targets = ['header', 'body', 'footer']
-  autoDisappear = true;
 
   connect() {
     triggerEvent(document, 'onModalOpen', this.eventDetail);
     addClass(document.body, 'overflow-hidden');
-    this.autoDisappear = JSON.parse(this.element.dataset.autoDisappear)
   }
 
   onClose(e) {
@@ -26,10 +24,6 @@ export default class extends Controller {
     removeClass(document.body, 'overflow-hidden');
     hide(this.modal);
     this.modal.innerHTML = '';
-  }
-
-  disconnect() {
-    if(this.autoDisappear) this.disappear();
   }
 
   get modal() {

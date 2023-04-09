@@ -1,12 +1,17 @@
-<header class="shadow-md sm:shadow-none">
-  <div class="flex p-3 items-center">
+<header class="shadow-md sm:shadow-none sm:py-3 sm:px-0 px-3 py-1">
+  <div class="flex items-center">
     <div class="flex-none">
       <%= image_tag '/logo.png', class: 'w-[200px]' %>
     </div>
     <div class="grow flex justify-end">
       <div class="sm:hidden sticky top-0">
-        <span class="material-icons material-icons-outlined">
+        <span id="btn-mobile-menu" class="material-icons material-icons-outlined !text-4xl" data-controller="shared--toggle" data-show-target="#mobile-menu">
           menu
+        </span>
+      </div>
+      <div id="mobile-menu" class="fixed inset-0 w-screen h-screen bg-white z-10 hidden">
+        <span class="material-icons material-icons-outlined !text-4xl" data-controller="shared--toggle" data-hide-target="#mobile-menu">
+          close
         </span>
       </div>
       <div class="hidden sm:flex lg:gap-4 sm:gap-3 sm:justify-end">
@@ -17,7 +22,7 @@
     </div>
   </div>
 
-  <div class="hidden sm:flex gap-4 p-2 sm:p-3 items-center">
+  <div class="hidden sm:flex gap-4 py-2 sm:py-3 items-center">
     <% Menu.top.drop(2).each do |menu| %>
       <%= link_to menu.title, article_path(slug: menu.slug), class: 'menu-item' %>
     <% end %>
