@@ -20,9 +20,9 @@
       <% if header? %>
         <div data-shared--modal-target="header" class="flex-none"><%= header %></div>
       <% else %>
-        <div class="grid grid-cols-2 gap-2 items-center">
-          <div class="font-bold text-xl"><%== title %></div>
-          <div class="flex justify-end">
+        <div class="flex gap-2 items-center">
+          <div class="grow font-bold text-xl"><%== title %></div>
+          <div class="flex-none flex justify-end">
             <%=
               render Shared::ButtonComponent.new(hierarchy: :none,
                 leading_icon: 'close',

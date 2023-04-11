@@ -1,0 +1,51 @@
+<%= turbo_frame_tag 'featuredForm' do %>
+  <%= form_for article, url: save_url, turbo_method: turbo_method do |f| %>
+    <div class="grid gap-4">
+      <div class="gap-4 grid grid-flow-col grid-cols-4 justify-stretch">
+        <div class="col-span-2">
+          <%=
+            render Shared::InputComponent.new(
+              attribute_name: 'title',
+              label: 'Tiêu đề',
+              required: true,
+              form: f)
+          %>
+        </div>
+        
+        <%=
+          render Shared::InputComponent.new(
+            attribute_name: 'position',
+            caption: 'Mặt định là 0',
+            label: 'Vị trí',
+            required: true,
+            form: f)
+        %>
+        <%=
+          render Shared::InputComponent.new(
+            attribute_name: 'price',
+            caption: 'Sẽ xuất hiện trước tiêu đề (in đậm) nếu có',
+            label: 'Giá',
+            required: true,
+            form: f)
+        %>
+      </div>
+      <%=
+        render Shared::InputComponent.new(
+          attribute_name: 'standfirst',
+          label: 'Lời giới thiệu',
+          caption: 'Sẽ xuất hiện bên dưới tiêu đều nếu có',
+          type: :textarea,
+          form: f)
+      %>
+
+      <div data-controller="trix">
+        <%= f.rich_text_area :content, data: { trix_target: 'editor' } %>
+      </div>
+
+      <div class="self-end">
+        <%= submit_button %>
+      </div>
+    </div>
+  <% end %>
+<% end %>
+    

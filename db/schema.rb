@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_09_083920) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_11_114439) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -61,6 +61,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_09_083920) do
     t.string "slug"
     t.boolean "published"
     t.integer "position"
+    t.string "price"
   end
 
   create_table "featureds", force: :cascade do |t|
@@ -68,6 +69,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_09_083920) do
     t.integer "position", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "kind"
     t.index ["article_id"], name: "index_featureds_on_article_id"
   end
 

@@ -1,8 +1,7 @@
 <table class="min-w-full divide-y divide-gray-300">
   <thead>
     <tr>
-      <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-0">Tiêu đề</th>
-      <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Link tới bài viết</th>
+      <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-0">Link tới bài viết</th>
       <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Vị trí</th>
       <th scope="col" class="relative py-3.5 pl-3 pr-4 sm:pr-0 w-[120px]">
         <%=
@@ -10,7 +9,7 @@
             size: :sm,
             text: 'Thêm mới',
             data: {
-              url: new_admin_menu_path(kind: kind),
+              url: new_admin_featured_path(kind: kind),
               controller: 'shared--fetch'
             })
         %>
@@ -18,22 +17,21 @@
     </tr>
   </thead>
   <tbody class="divide-y divide-gray-200">
-    <% menus.each do |menu| %>
-      <tr id="menu-<%= menu.id %>">
-        <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0"><%= menu.title %></td>
-        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+    <% featureds.each do |featured| %>
+      <tr id="featured-<%= featured.id %>">
+        <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">
           <%=
             render Shared::ButtonComponent.new(
               hierarchy: :link,
               leading_icon: 'link',
-              text: menu.article.title,
+              text: featured.title,
               data: {
-                url: edit_admin_article_path(menu.article.id),
+                url: edit_admin_article_path(featured.article.id),
                 controller: 'shared--fetch'
               })
           %>
         </td>
-        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><%= menu.position %></td>
+        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><%= featured.position %></td>
         <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-0 flex gap-2">
           <%=
             render Shared::ButtonComponent.new(
@@ -41,7 +39,7 @@
               leading_icon: 'edit',
               text: 'Sửa',
               data: {
-                url: edit_admin_menu_path(menu.id),
+                url: edit_admin_featured_path(featured.id),
                 controller: 'shared--fetch'
               })
           %>
@@ -49,7 +47,7 @@
             render Shared::ButtonComponent.new(
               hierarchy: :link,
               leading_icon: 'delete',
-              href: admin_menu_path(menu.id),
+              href: admin_featured_path(featured.id),
               data: {
                 turbo_method: :delete,
                 turbo_confirm: 'Chắc chắn không ?'

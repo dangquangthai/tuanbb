@@ -5,6 +5,8 @@ class ApplicationComponent < ViewComponent::Base
   include Turbo::StreamsHelper
   include Turbo::FramesHelper
 
+  delegate :rich_text_area_tag, to: :helpers
+
   def xs?
     size == :xs
   end

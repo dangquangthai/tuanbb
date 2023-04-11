@@ -21,5 +21,10 @@ module Tuanbb
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
     config.time_zone = 'Hanoi'
+
+    config.after_initialize do
+      ActionText::ContentHelper.allowed_attributes.add 'style'
+      ActionText::ContentHelper.allowed_tags.add 'centered-div'
+    end
   end
 end

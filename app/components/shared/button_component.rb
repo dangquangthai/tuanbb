@@ -48,7 +48,7 @@ module Shared
     end
 
     def defaullt_css_class
-      class_names("btn-#{hierarchy} btn-#{size}",
+      class_names("btn-#{hierarchy} btn-#{size} flex gap-1 items-center",
                   css_class.to_s => css_class.present?,
                   'pointer-events-none' => disabled)
     end

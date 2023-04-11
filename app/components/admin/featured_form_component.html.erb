@@ -1,0 +1,29 @@
+<%= turbo_frame_tag 'featuredForm' do %>
+  <%= form_for featured, url: save_url, turbo_method: turbo_method do |f| %>
+    <div class="grid gap-4">
+      <%= f.hidden_field :kind %>
+      <%=
+        render Shared::InputComponent.new(
+          attribute_name: 'article_id',
+          label: 'Link tới bài viết',
+          required: true,
+          type: :select,
+          collection: articles_collection,
+          placeholder: 'Chọn 1 bài viết',
+          form: f)
+      %>
+
+      <%=
+        render Shared::InputComponent.new(
+          attribute_name: 'position',
+          label: 'Vị trí',
+          required: true,
+          form: f)
+      %>
+
+      <div class="self-end">
+        <%= submit_button %>
+      </div>
+    </div>
+  <% end %>
+<% end %>

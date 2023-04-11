@@ -1,6 +1,5 @@
 <% if flash.key?(:notice) %>
   <%== redirect_tag admin_home_index_path %>
-  <%== hide_modal %>  
 <% else %>
   <%= render Admin::MenuFormComponent.new(menu: @menu, save_url: admin_menus_path) %>
 <% end %>

@@ -1,3 +1,21 @@
-<div data-controller="hello">
-  
+<div class="mt-4 grid md:grid-flow-col md:justify-stretch md:gap-8 gap-4">
+  <% Featured.auto_show.bottom.each do |featured| %>
+    <div class="grid gap-4 overflow-hidden">
+      <div class="text-lg rounded-full flex items-center gap-2">
+        <span class="material-icons material-symbols-rounded text-secondary">
+          radio_button_checked
+        </span>
+        <span>
+          <%= featured.title %>
+        </span>
+      </div>
+      <div class="text-secondary"><%= featured.content.body %></div>
+    </div>
+  <% end %>
+
+  <% if Featured.top_5.any? %>
+    <div class="grid gap-4">
+      
+    </div>
+  <% end %>
 </div>
