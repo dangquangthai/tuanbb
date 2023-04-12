@@ -11,12 +11,12 @@ gem 'cssbundling-rails', '~> 1.1.2'
 gem 'devise', '~> 4.9'
 gem 'sprockets-rails', '~> 3.4.2'
 gem 'view_component', '~> 2.82'
+gem 'puma', '~> 5.6'
 
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.4.6'
 
 # Use the Puma web server [https://github.com/puma/puma]
-gem 'puma', '~> 6.1.1'
 
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem 'importmap-rails', '~> 1.1.5'
@@ -73,6 +73,13 @@ group :development do
   gem 'rubocop', '~> 1.48.1'
   gem 'rubocop-performance', '~> 1.16'
   gem 'rubocop-rails', '~> 2.18'
+
+  # deployment
+  gem 'capistrano'
+  gem 'capistrano-rvm'
+  gem 'capistrano-rails',   require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano3-puma', '~> 5.2.0'
 end
 
 group :test do

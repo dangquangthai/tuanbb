@@ -1,21 +1,40 @@
-<div class="mt-4 grid md:grid-flow-col md:justify-stretch md:gap-8 gap-4">
+<div class="mt-4 grid md:grid-flow-col md:justify-stretch gap-4">
   <% Featured.auto_show.bottom.each do |featured| %>
-    <div class="grid gap-4 overflow-hidden">
+    <div class="overflow-hidden gap-4 grid h-fit px-2 md:px-0">
       <div class="text-lg rounded-full flex items-center gap-2">
-        <span class="material-icons material-symbols-rounded text-secondary">
-          radio_button_checked
+        <span class="material-icons material-symbols-rounded text-link">
+          density_small
         </span>
-        <span>
+        <span class="font-bold text-base text-link uppercase">
           <%= featured.title %>
         </span>
       </div>
-      <div class="text-secondary"><%= featured.content.body %></div>
+      <div class="text-secondary">
+        <div class="ml-2.5 pl-4 border-l-2 border-disabled">
+          <%= featured.content.body %>
+        </div>
+      </div>
     </div>
   <% end %>
 
   <% if Featured.top_5.any? %>
-    <div class="grid gap-4">
-      
+    <div class="overflow-hidden gap-4 grid h-fit px-2 md:px-0 lg:block hidden">
+      <div class="text-lg rounded-full flex items-center gap-2">
+        <span class="relative flex h-3 w-3">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#dc2626] opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-3 w-3 bg-trend"></span>
+        </span>
+        <span class="font-bold text-base text-trend uppercase">
+          Trend
+        </span>
+      </div>
+      <div class="text-secondary">
+        <div class="ml-2.5 pl-4 border-l-2 border-disabled">
+          <% Featured.top_5.each do |featured| %>
+
+          <% end %>
+        </div>
+      </div>
     </div>
   <% end %>
 </div>

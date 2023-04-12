@@ -8,11 +8,6 @@
 }
 
 @layer components {
-  centered-div {
-    display: block;
-    text-align: center;
-  }
-  
   .modal-md {
     @apply w-[400px];
   }
@@ -38,7 +33,7 @@
   }
 
   .menu-item {
-    @apply py-2 font-semibold border-b-2 border-white hover:border-slate-700;
+    @apply py-2 font-semibold border-b-2 border-white hover:border-secondary text-primary;
   }
 
   .mobile-menu-item {
@@ -123,5 +118,30 @@
 
   .pagination > .page {
     @apply btn-secondary px-2;
+  }
+
+  centered-div {
+    display: block;
+    text-align: center;
+  }
+
+  .text-link {
+    color: #C19D3F;
+  }
+
+  .bg-trend {
+    background-color: #f97316;
+  }
+
+  .text-trend {
+    color: #f97316;
+  }
+
+  .border-disabled {
+    @apply border-neutral-200;
+  }
+
+  .border-secondary {
+    @apply border-slate-700;
   }
 }

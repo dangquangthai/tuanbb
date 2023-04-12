@@ -79,8 +79,10 @@ test:
 # Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
 # for a full overview on how database connection configuration can be specified.
 #
+staging:
+  <<: *default
+  url: postgres://postgres:postgres@localhost:5432/tuanbb_staging
+
 production:
   <<: *default
-  database: tuanbb_production
-  username: tuanbb
-  password: <%= ENV["TUANBB_DATABASE_PASSWORD"] %>
+  url: postgres://postgres:postgres@localhost:5432/tuanbb_production
