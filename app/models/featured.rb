@@ -11,4 +11,5 @@ class Featured < ApplicationRecord
 
   scope :auto_show, -> { where(kind: :auto_show) }
   scope :trending, -> { where(kind: :trending) }
+  scope :not_article, -> (article_id) { includes(:article).where.not(article: { id: article_id }) }
 end

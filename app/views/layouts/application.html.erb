@@ -14,19 +14,11 @@
   </head>
 
   <body class="antialiased">
-    <main class="container mx-auto">
+    <main class="container mx-auto relative">
       <%= render 'layouts/header' %>
       <%= yield %>
-      
-      <% footer = Article.find_by(slug: 'footer') %>
-      <% if footer.present? && footer.content.body.present? %>
-        <hr class="mt-12">
-        <div class="sm:px-0 py-4 px-4 bg-gray-50">
-          <%== footer.content.body %>
-        </div>
-      <% else %>
-        <div class="mt-12"></div>
-      <% end %>
+      <%= render FooterComponent.new %>
+      <%= render ContactComponent.new %>
     </main>
     <%= render 'layouts/google_analytics' %>
     <%= render 'layouts/facebook_chatbox' %>

@@ -1,28 +1,6 @@
 <div class="mt-4 grid md:grid-cols-4 md:gap-4 gap-12">
   <% Featured.auto_show.bottom.each do |featured| %>
-    <div>
-      <div class="overflow-hidden gap-4 grid sm:h-fit h-[500px] sm:px-2 px-4 md:px-0">
-        <div class="text-lg rounded-full items-center gap-2 hidden sm:flex">
-          <span class="material-icons material-symbols-rounded text-link">
-            radio_button_checked
-          </span>
-          <%= link_to featured.title, article_path(slug: featured.slug), class: 'font-bold text-base text-link uppercase' %>
-        </div>
-        <div class="block sm:hidden">
-          <%= link_to featured.title, article_path(slug: featured.slug), class: 'font-bold text-base text-link uppercase' %>
-          <hr class="border-link mb-4 mt-2">
-        </div>
-        <div class="text-secondary">
-          <div class="sm:ml-2.5 sm:pl-4 sm:border-l-2 sm:border-link-disabled">
-            <%= featured.content.body %>
-          </div>
-        </div>
-      </div>
-      <div class="sm:hidden flex justify-end px-4 mt-4">
-        <%= link_to "Xem toàn bộ #{featured.title}", article_path(slug: featured.slug), class: 'text-link text-sm font-bold' %>
-      </div>
-    </div>
-      
+    <%= render Home::AutoShowComponent.new(featured: featured) %>
   <% end %>
 
   <%= render Home::TrendsComponent.new(trends: Featured.trending.top) %>

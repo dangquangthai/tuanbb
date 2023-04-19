@@ -8,14 +8,17 @@
       Trending
     </span>
   </div>
+
   <div class="block sm:hidden">
     <div class="font-bold text-base text-trend uppercase">
       Trending
     </div>
-    <hr class="border-trend mb-4 mt-2">
+    <hr class="border-trend mt-2">
   </div>
-  <div class="sm:ml-2.5 sm:pl-4 sm:border-l-2 sm:border-trend-disabled grid gap-8">
-    <% trends.each do |featured| %>
+
+  <div class="sm:ml-2.5 sm:pl-4 sm:border-l-2 sm:border-trend-disabled grid gap-4">
+    <% trends.each_with_index do |featured, index| %>
+      <% if index > 0 %><hr class="text-gray-200" ><% end %>
       <%= render Home::TrendItemComponent.new(article: featured.article) %>
     <% end %>
   </div>

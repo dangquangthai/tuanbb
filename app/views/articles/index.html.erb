@@ -14,7 +14,7 @@
     <div class="block sm:hidden">
       <span class="font-bold text-base uppercase"><%= @article.title %></span>
       <span class="text-lg font-bold text-[#fc1703]"><%= @article.price %></span>
-      <hr class="border-link mb-4 mt-2">
+      <hr class="border-link mt-2">
     </div>
     <div class="text-secondary">
       <div class="sm:ml-2.5 sm:pl-4 sm:border-l-2 sm:border-link-disabled">
@@ -23,5 +23,11 @@
     </div>
   </div>
 
-  <%= render Home::TrendsComponent.new(trends: Featured.trending.top) %>
+  <%= render Home::TrendsComponent.new(trends: Featured.not_article(@article.id).trending.top) %>
+
+  <div class="sm:hidden grid gap-12">
+    <% Featured.not_article(@article.id).auto_show.bottom.each do |featured| %>
+      <%= render Home::AutoShowComponent.new(featured: featured) %>
+    <% end %>
+  </div>
 </div>
