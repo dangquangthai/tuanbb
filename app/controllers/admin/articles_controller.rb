@@ -25,7 +25,7 @@ module Admin
     def new_article_params
       return article_params if article_params[:slug].present?
 
-      article_params.merge(slug: article_params['title'].to_slug)
+      article_params.merge!(slug: article_params['title'].to_slug)
     end
 
     def article_params

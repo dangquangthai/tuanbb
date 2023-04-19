@@ -1,0 +1,3 @@
+<h3 class="text-xl mt-10">Trending</h3>
+<hr class="mt-2" />
+<%= render Admin::FeaturedsComponent.new(featureds: Featured.trending.top.includes(:article), kind: :trending) %>

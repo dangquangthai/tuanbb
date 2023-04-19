@@ -16,7 +16,11 @@ Rails.application.routes.draw do
     resources :articles
     resources :menus
     resources :featureds
-    resources :home, only: %i[index]
+    resources :home, only: %i[index] do
+      collection do
+        get :trending
+      end
+    end
   end
 
   get '/:slug', to: 'articles#index', as: :article

@@ -137,6 +137,14 @@
     color: #f97316;
   }
 
+  .border-link {
+    border-color: #C19D3F;
+  }
+
+  .border-trend {
+    border-color: #f97316;
+  }
+
   .border-link-disabled {
     @apply border-gray-200;
   }
