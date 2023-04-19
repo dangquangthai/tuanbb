@@ -1,0 +1,11 @@
+<a class="grid gap-1" href="<%= article_path(slug: article.slug) %>">
+  <div class="text-lg font-medium text-gray-800"><%= article.title %></div>
+
+  <% if article.price.present? %>
+    <div class="text-lg font-bold text-[#fc1703]"><%= article.price %></div>
+  <% end %>
+
+  <div class="text-sm font-semibold text-gray-600"><%= article.standfirst %></div>
+
+  <hr class="text-gray-200" >
+</a>

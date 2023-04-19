@@ -1,0 +1,56 @@
+<table class="min-w-full divide-y divide-gray-300">
+  <thead>
+    <tr>
+      <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-0">Tiều đề</th>
+      <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Lời giới thiệu</th>
+      <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Đường dẫn thân thiện</th>
+      <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Ví trí</th>
+      <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Giá</th>
+      <th scope="col" class="relative py-3.5 pl-3 pr-4 sm:pr-0 w-[120px]">
+        <%=
+          render Shared::ButtonComponent.new(
+            size: :sm,
+            text: 'Thêm mới',
+            data: {
+              url: new_admin_article_path,
+              controller: 'shared--fetch'
+            })
+        %>
+      </th>
+    </tr>
+  </thead>
+  <tbody class="divide-y divide-gray-200">
+    <% articles.each do |article| %>
+      <tr id="article-<%= article.id %>">
+        <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0"><%= article.title %></td>
+        <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0"><%= article.slug %></td>
+        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><%= article.standfirst %></td>
+        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><%= article.position %></td>
+        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><%= article.price %></td>
+        <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-0 flex gap-2">
+          <%=
+            render Shared::ButtonComponent.new(
+              hierarchy: :link,
+              leading_icon: 'edit',
+              text: 'Sửa',
+              data: {
+                url: edit_admin_article_path(article.id),
+                controller: 'shared--fetch'
+              })
+          %>
+          <%=
+            render Shared::ButtonComponent.new(
+              hierarchy: :link,
+              leading_icon: 'delete',
+              href: admin_article_path(article.id),
+              data: {
+                turbo_method: :delete,
+                turbo_confirm: 'Chắc chắn không ?'
+              },
+              text: 'Xoá')
+          %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

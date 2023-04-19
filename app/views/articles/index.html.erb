@@ -1,0 +1,22 @@
+<div class="mt-4 grid md:grid-cols-4 gap-4">
+  <div class="overflow-hidden gap-4 grid h-fit px-2 md:px-0 col-span-3">
+    <div class="text-lg rounded-full flex items-center gap-2">
+      <span class="material-icons material-symbols-rounded">
+        radio_button_checked
+      </span>
+      <div class="font-bold text-base uppercase">
+        <%= @article.title %>
+        <% if @article.price.present? %>
+          <span class="text-lg font-bold text-[#fc1703]"><%= @article.price %></span>
+        <% end %>
+      </div>
+    </div>
+    <div class="text-secondary">
+      <div class="ml-2.5 pl-4 border-l-2 border-link-disabled">
+        <%= @article.content.body %>
+      </div>
+    </div>
+  </div>
+
+  <%= render Home::TrendsComponent.new(trends: Featured.trending.top) %>
+</div>

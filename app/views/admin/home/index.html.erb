@@ -10,6 +10,6 @@
 <hr class="mt-2" />
 <%= render Admin::FeaturedsComponent.new(featureds: Featured.auto_show.bottom.includes(:article), kind: :auto_show) %>
 
-<h3 class="text-xl mt-10">Bài viết nổi bật</h3>
+<h3 class="text-xl mt-10">Trend</h3>
 <hr class="mt-2" />
-<%= render Admin::FeaturedsComponent.new(featureds: Featured.top_5.bottom.includes(:article), kind: :top_5) %>
+<%= render Admin::FeaturedsComponent.new(featureds: Featured.trending.top.includes(:article), kind: :trending) %>

@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
 class Featured < ApplicationRecord
-  KINDS = %w[auto_show top_5].freeze
+  KINDS = %w[auto_show trending].freeze
 
   belongs_to :article
 
   validates :position, numericality: { only_integer: true }, allow_blank: true
 
-  delegate :title, :slug, :content, to: :article, allow_nil: true
+  delegate :title, :slug, :content, :standfirst, :price, to: :article, allow_nil: true
 
   scope :auto_show, -> { where(kind: :auto_show) }
-  scope :top_5, -> { where(kind: :top_5) }
+  scope :trending, -> { where(kind: :trending) }
 end

@@ -5,5 +5,5 @@
     <%== redirect_tag admin_home_index_path %>
   <% end %>
 <% else %>
-  <%= render Admin::ArticleFormComponent.new(article: @article, save_url: admin_article_path(@article.id)) %>
+  <%= render Admin::ArticleFormComponent.new(article: @article, save_url: admin_articles_path) %>
 <% end %>

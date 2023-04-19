@@ -1,0 +1,16 @@
+<div class="overflow-hidden gap-4 lg:grid h-fit px-2 md:px-0 hidden">
+  <div class="text-lg rounded-full flex items-center gap-2">
+    <span class="relative flex h-3 w-3 ml-1.5">
+      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#dc2626] opacity-75"></span>
+      <span class="relative inline-flex rounded-full h-3 w-3 bg-trend"></span>
+    </span>
+    <span class="font-bold text-base text-trend uppercase">
+      Trend
+    </span>
+  </div>
+  <div class="ml-2.5 pl-4 border-l-2 border-trend-disabled grid gap-8">
+    <% trends.each do |featured| %>
+      <%= render Home::TrendItemComponent.new(article: featured.article) %>
+    <% end %>
+  </div>
+</div>

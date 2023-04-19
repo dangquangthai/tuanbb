@@ -51,4 +51,8 @@ module ApplicationHelper
   def show_notification
     turbo_stream.update(:notifications) { render(Shared::NotificationComponent.new(flash: flash)) }
   end
+
+  def admin_articles_page?
+    URI.parse(request.referrer).path == '/admin/articles'
+  end
 end

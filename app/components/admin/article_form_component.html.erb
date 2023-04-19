@@ -1,7 +1,7 @@
 <%= turbo_frame_tag 'featuredForm' do %>
   <%= form_for article, url: save_url, turbo_method: turbo_method do |f| %>
     <div class="grid gap-4">
-      <div class="gap-4 grid grid-flow-col grid-cols-4 justify-stretch">
+      <div class="gap-4 grid grid-cols-3 justify-stretch">
         <div class="col-span-2">
           <%=
             render Shared::InputComponent.new(
@@ -14,19 +14,29 @@
         
         <%=
           render Shared::InputComponent.new(
+            attribute_name: 'price',
+            caption: 'Sẽ xuất hiện dưới tiêu đề (màu đỏ) nếu có',
+            label: 'Giá',
+            form: f)
+        %>
+      </div>
+      <div class="gap-4 grid grid-cols-3 justify-stretch">
+        <div class="col-span-2">
+          <%=
+            render Shared::InputComponent.new(
+              attribute_name: 'slug',
+              label: 'Đường dẫn thân thiện',
+              placeholder: 'Tự động tạo từ Tiêu đề',
+              caption: 'Không được trùng. Nếu ko nhập sẽ tự động tạo từ Tiều Đề',
+              form: f)
+          %>
+        </div>
+        
+        <%=
+          render Shared::InputComponent.new(
             attribute_name: 'position',
             caption: 'Mặt định là 0',
             label: 'Vị trí',
-            required: true,
-            form: f)
-        %>
-
-        <%=
-          render Shared::InputComponent.new(
-            attribute_name: 'price',
-            caption: 'Sẽ xuất hiện trước tiêu đề (in đậm) nếu có',
-            label: 'Giá',
-            required: true,
             form: f)
         %>
       </div>

@@ -137,8 +137,12 @@
     color: #f97316;
   }
 
-  .border-disabled {
-    @apply border-neutral-200;
+  .border-link-disabled {
+    @apply border-gray-200;
+  }
+
+  .border-trend-disabled {
+    @apply border-red-200;
   }
 
   .border-secondary {
