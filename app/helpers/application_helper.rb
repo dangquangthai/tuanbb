@@ -55,4 +55,8 @@ module ApplicationHelper
   def admin_articles_page?
     URI.parse(request.referrer).path == '/admin/articles'
   end
+
+  def admin_trending_page?
+    URI.parse(request.referrer).path == '/admin/home/trending'
+  end
 end
