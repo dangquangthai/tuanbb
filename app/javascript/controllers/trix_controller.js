@@ -6,6 +6,10 @@ import Trix from 'trix'
 export default class extends Controller {
   static targets = ['editor', 'foregroundColorPicker', 'backgroundColorPicker']
 
+  connect() {
+    addClass(document.querySelector('#trix-toolbar-1'), 'sticky top-[-20px] bg-white');
+  }
+
   openForegroundColorPicker () {
     this.foregroundColorPickerTarget.click();
   }

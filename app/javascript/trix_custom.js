@@ -2,6 +2,11 @@ Trix.config.toolbar.getDefaultHTML = function() {
   const { lang } = Trix.config
   return `<div class="trix-button-row">
     <span class="trix-button-group trix-button-group--text-tools" data-trix-button-group="text-tools">
+      <button class="trix-button btn" type="button" data-trix-attribute="heading1" title="${lang.heading1}" tabindex="-1">
+        <span class="material-icons material-symbols-rounded">
+          title
+        </span>
+      </button>
       <button class="trix-button btn" type="button" data-trix-attribute="bold" data-trix-key="b" title="${lang.bold}" tabindex="-1">
         <span class="material-icons material-symbols-rounded">
           format_bold
